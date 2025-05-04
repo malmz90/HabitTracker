@@ -13,8 +13,19 @@ struct HabitTrackerApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            TabView {
+                ContentView()
+                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                    .tabItem {
+                        Label("Vanor", systemImage: "list.bullet")
+                    }
+                
+                StatsView()
+                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                    .tabItem {
+                        Label("Statistik", systemImage: "chart.bar")
+                    }
+            }
         }
     }
 }
