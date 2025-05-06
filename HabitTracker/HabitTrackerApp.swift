@@ -1,10 +1,3 @@
-//
-//  HabitTrackerApp.swift
-//  HabitTracker
-//
-//  Created by Alexander Malmqvist on 2025-05-02.
-//
-
 import SwiftUI
 
 @main
@@ -18,6 +11,12 @@ struct HabitTrackerApp: App {
                     .environment(\.managedObjectContext, persistenceController.container.viewContext)
                     .tabItem {
                         Label("Vanor", systemImage: "list.bullet")
+                    }
+                
+                MissionsView()
+                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                    .tabItem {
+                        Label("Uppdrag", systemImage: "star.fill")
                     }
                 
                 StatsView()
