@@ -25,7 +25,7 @@ struct MissionsView: View {
     private var diamonds: Int {
         return Int(users.first?.diamonds ?? 0)
     }
-    
+
     // Tid kvar tills uppdragen återställs
     @State private var timeRemaining: String = ""
     @State private var showResetConfirmation = false
@@ -33,6 +33,7 @@ struct MissionsView: View {
     
     var body: some View {
         NavigationView {
+          
             VStack {
                 // Header med diamanter
                 HStack {

@@ -7,7 +7,7 @@ struct HabitTrackerApp: App {
     var body: some Scene {
         WindowGroup {
             TabView {
-                ContentView()
+                HabitsView()
                     .environment(\.managedObjectContext, persistenceController.container.viewContext)
                     .tabItem {
                         Label("Vanor", systemImage: "list.bullet")
@@ -17,6 +17,12 @@ struct HabitTrackerApp: App {
                     .environment(\.managedObjectContext, persistenceController.container.viewContext)
                     .tabItem {
                         Label("Uppdrag", systemImage: "star.fill")
+                    }
+                
+                GardenView()
+                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                    .tabItem {
+                        Label("Trädgård", systemImage: "leaf.fill")
                     }
                 
                 StatsView()

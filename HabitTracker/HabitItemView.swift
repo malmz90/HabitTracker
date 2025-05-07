@@ -77,7 +77,7 @@ struct HabitItemView: View {
     private func updateMissions() {
         // Räkna slutförda vanor för idag, OCH som är markerade för uppdrag
         let completedTodayPredicate = NSPredicate(format: "lastCompletedDate != nil AND lastCompletedDate >= %@ AND isCompletedForMission == true", Calendar.current.startOfDay(for: Date()) as NSDate)
-        
+   
         // Fetch request för att räkna alla vanor slutförda idag
         let habitsRequest: NSFetchRequest<Habit> = Habit.fetchRequest()
         habitsRequest.predicate = completedTodayPredicate
