@@ -60,7 +60,7 @@ struct HabitItemView: View {
             }
             
             habit.lastCompletedDate = today
-            habit.isCompletedForMission = true  // Lägg till denna rad
+            habit.isCompletedForMission = true  
         }
         
         do {

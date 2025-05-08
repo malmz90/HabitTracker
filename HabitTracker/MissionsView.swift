@@ -182,7 +182,7 @@ struct MissionsView: View {
             return
         }
         
-        // Skapa tre nivåer av uppdrag baserat på antalet vanor
+        // Skapa fyra nivåer av uppdrag baserat på antalet vanor
         
         // Nivå 1: Slutför ca 25% av vanorna (minst 1)
         let level1Count = max(1, Int(Double(totalHabits) * 0.25))

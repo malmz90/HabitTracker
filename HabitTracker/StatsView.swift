@@ -7,7 +7,7 @@
 
 import SwiftUI
 import CoreData
-
+/*
 struct StatsView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(
@@ -156,3 +156,4 @@ struct StatsView_Previews: PreviewProvider {
         StatsView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
+*/
