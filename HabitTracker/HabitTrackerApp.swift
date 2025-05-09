@@ -23,14 +23,7 @@ struct HabitTrackerApp: App {
                     .environment(\.managedObjectContext, persistenceController.container.viewContext)
                     .tabItem {
                         Label("Trädgård", systemImage: "leaf.fill")
-                    }
-                /*
-                StatsView()
-                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
-                    .tabItem {
-                        Label("Statistik", systemImage: "chart.bar")
-                    }
-                 */
+                    }             
             }
         }
     }
