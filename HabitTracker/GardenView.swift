@@ -29,7 +29,13 @@ struct GardenView: View {
         return plantedFlowers.first(where: { $0.position == Int16(position) })
     }
     
-    @State private var selectedSlot: Int? = nil
+        
+    struct SlotSelection: Identifiable {
+        var id: Int { slot }
+        let slot: Int
+    }
+
+    @State private var selectedSlot: SlotSelection? = nil
     @State private var showingPlantingOptions = false
     
     var body: some View {
@@ -78,7 +84,7 @@ struct GardenView: View {
                         } else {
                             // Visa tom planteringsplats
                             Button(action: {
-                                selectedSlot = index
+                                selectedSlot = SlotSelection(slot: index)
                                 showingPlantingOptions = true
                             }) {
                                 Rectangle()
@@ -93,13 +99,12 @@ struct GardenView: View {
                 
                 Spacer()
             }
-            .sheet(isPresented: $showingPlantingOptions) {
-                if let slot = selectedSlot {
-                    PlantingOptionsView(slot: slot) {
-                        showingPlantingOptions = false
-                    }
+            .sheet(item: $selectedSlot) { slotSelection in
+                PlantingOptionsView(slot: slotSelection.slot) {
+                    selectedSlot = nil
                 }
             }
+
         }
     }
     
